@@ -3,331 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kinder A Journey - บันทึกการเดินทางของหนูน้อย</title>
+    <title>Kinder A Journey V.2 - ภารกิจพิชิตพัฒนาการ</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            /* ชุดสีพาสเทล */
-            --bg-color: #FDF6EC; /* ครีมอ่อน */
-            --primary: #FFB7B2; /* ชมพูพาสเทล */
-            --secondary: #B5EAD7; /* เขียวมิ้นท์ */
-            --accent: #C7CEEA; /* ม่วงอ่อน */
-            --text-dark: #555555;
-            --text-light: #FFFFFF;
+            --bg-color: #FFF5F7;
             --card-bg: #FFFFFF;
-            --shadow: 0 8px 20px rgba(0,0,0,0.05);
-            --radius: 20px;
-        }
+            
+            /* Theme Colors ตามหมวดหมู่ */
+            --c-body: #FFB7B2;   /* Physical - ชมพู */
+            --c-brain: #B5EAD7;  /* Cognitive - เขียวมิ้นท์ */
+            --c-social: #FFDAC1; /* Social - ส้มพีช */
+            --c-create: #C7CEEA; /* Creative - ม่วง */
+            --c-lang: #E2F0CB;   /* Language - เหลืองมะนาว */
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+            --text-main: #555;
+            --shadow: 0 10px 25px rgba(0,0,0,0.08);
+            --radius: 25px;
         }
 
         body {
             font-family: 'Sarabun', sans-serif;
             background-color: var(--bg-color);
-            color: var(--text-dark);
-            line-height: 1.6;
+            color: var(--text-main);
+            margin: 0;
+            padding-bottom: 50px;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 20px;
         }
 
-        /* Header น่ารักๆ */
+        /* Header */
         header {
             text-align: center;
-            padding: 40px 0;
-            background: linear-gradient(135deg, #FF9AA2 0%, #FFB7B2 100%);
-            border-radius: 0 0 30px 30px;
-            margin-bottom: 30px;
+            padding: 30px 20px;
+            background: white;
+            border-radius: 0 0 var(--radius) var(--radius);
             box-shadow: var(--shadow);
-            color: white;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 10px;
+            background: linear-gradient(90deg, var(--c-body), var(--c-brain), var(--c-social), var(--c-create), var(--c-lang));
         }
 
         h1 {
-            font-weight: 700;
-            font-size: 2.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        h1 span {
-            display: inline-block;
-            animation: bounce 2s infinite;
+            color: #666;
+            margin: 0;
+            font-size: 2rem;
         }
 
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
+        h1 span { color: #FF9AA2; }
+
+        /* Step 1: เลือกหมวดหมู่ (Grid) */
+        .domain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
         }
 
-        p.subtitle {
-            font-size: 1.1rem;
-            opacity: 0.9;
+        .domain-card {
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
 
-        /* Card Design */
-        .card {
-            background: var(--card-bg);
-            border-radius: var(--radius);
+        .domain-card:hover { transform: translateY(-5px); }
+        .domain-card.active { border-color: #FF9AA2; transform: scale(1.05); box-shadow: var(--shadow); }
+
+        .domain-icon { font-size: 3rem; display: block; margin-bottom: 10px; }
+        .domain-title { font-weight: bold; display: block; }
+
+        /* สีเฉพาะการ์ด */
+        .d-body:hover, .d-body.active { background-color: #FFF0F0; }
+        .d-brain:hover, .d-brain.active { background-color: #F0FFF9; }
+        .d-social:hover, .d-social.active { background-color: #FFF8F0; }
+        .d-create:hover, .d-create.active { background-color: #F4F6FF; }
+        .d-lang:hover, .d-lang.active { background-color: #FAFFF0; }
+
+        /* Step 2: เลือกกิจกรรม (ซ่อนอยู่ก่อน) */
+        .activity-section {
+            display: none; /* ซ่อนไว้ก่อน */
+            background: white;
             padding: 30px;
-            margin-bottom: 25px;
+            border-radius: var(--radius);
             box-shadow: var(--shadow);
-            border: 2px solid white;
+            animation: slideDown 0.5s ease;
+            margin-bottom: 30px;
         }
 
-        .card-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-            color: #FF9AA2;
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        .card-header h2 {
-            font-size: 1.5rem;
-            margin-left: 10px;
-        }
-
-        /* Form Elements */
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: #777;
-        }
-
-        input, select, textarea {
+        select, textarea {
             width: 100%;
-            padding: 12px 15px;
+            padding: 15px;
             border: 2px solid #EEE;
             border-radius: 15px;
-            font-family: 'Sarabun', sans-serif;
+            font-family: 'Sarabun';
             font-size: 1rem;
-            transition: all 0.3s;
-            background-color: #FAFAFA;
+            margin-bottom: 20px;
+            background: #FAFAFA;
         }
 
-        input:focus, select:focus, textarea:focus {
-            border-color: var(--secondary);
-            outline: none;
-            background-color: white;
-        }
-
-        /* Custom Button */
-        .btn-submit {
-            background-color: var(--secondary);
-            color: #558B78;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            cursor: pointer;
-            width: 100%;
-            transition: transform 0.2s, box-shadow 0.2s;
-            font-family: 'Sarabun', sans-serif;
-        }
-
-        .btn-submit:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(181, 234, 215, 0.4);
-        }
-
-        /* History List */
-        .history-item {
-            background-color: #F9F9F9;
-            border-left: 5px solid var(--accent);
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 10px;
+        .rating-group {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .rating-btn {
+            background: none;
+            border: 2px solid #EEE;
+            font-size: 1.5rem;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.2s;
         }
         
-        .skill-tag {
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 5px;
+        .rating-btn:hover, .rating-btn.selected {
+            background: #FFD700;
+            border-color: #FFD700;
+            color: white;
+            transform: scale(1.1);
         }
 
-        .tag-logic { background-color: #E2F0CB; color: #6A8E2E; }
-        .tag-lang { background-color: #FFDAC1; color: #A86A3D; }
-        .tag-social { background-color: #FFB7B2; color: #8E3B3B; }
-        .tag-create { background-color: #E0BBE4; color: #6A3B8E; }
-        .tag-body { background-color: #957DAD; color: white; }
-
-        .score-display {
+        .btn-save {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(45deg, #FF9AA2, #FFB7B2);
+            color: white;
+            border: none;
+            border-radius: 50px;
             font-size: 1.2rem;
-            color: #FFD700; /* Gold */
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 154, 162, 0.4);
         }
         
-        .empty-state {
-            text-align: center;
-            color: #AAA;
-            padding: 20px;
-        }
+        .btn-save:hover { filter: brightness(1.05); }
 
-    </style>
-</head>
-<body>
-
-    <header>
-        <div class="container" style="padding:0;">
-            <h1>🧸 Kinder A <span>Journey</span></h1>
-            <p class="subtitle">ระบบบันทึกและส่งเสริมพัฒนาการเด็กปฐมวัยแบบองค์รวม</p>
-        </div>
-    </header>
-
-    <div class="container">
-        
-        <div class="card">
-            <div class="card-header">
-                <span>📝</span>
-                <h2>บันทึกกิจกรรมวันนี้</h2>
-            </div>
-            
-            <form id="devForm">
-                <div class="form-group">
-                    <label>หัวข้อกิจกรรม / สิ่งที่เรียนรู้</label>
-                    <input type="text" id="activity" placeholder="เช่น ต่อเลโก้รูปบ้าน, เล่านิทานเรื่องกระต่าย" required>
-                </div>
-
-                <div class="form-group">
-                    <label>ด้านทักษะ (Skill Domain)</label>
-                    <select id="skillDomain">
-                        <option value="logic">🧮 สติปัญญาและการคิดวิเคราะห์ (Cognitive & Logic)</option>
-                        <option value="lang">🗣️ ภาษาและการสื่อสาร (Language)</option>
-                        <option value="social">🤗 อารมณ์และสังคม (Social & Emotional)</option>
-                        <option value="create">🎨 จินตนาการและความคิดสร้างสรรค์ (Creativity)</option>
-                        <option value="body">🏃 ร่างกายและการเคลื่อนไหว (Physical)</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label>ผลการประเมิน (Rating)</label>
-                    <select id="rating">
-                        <option value="5">⭐⭐⭐⭐⭐ ทำได้ดีเยี่ยม (Excellent)</option>
-                        <option value="4">⭐⭐⭐⭐ ทำได้ดี (Very Good)</option>
-                        <option value="3">⭐⭐⭐ ทำได้ตามเกณฑ์ (Good)</option>
-                        <option value="2">⭐⭐ ควรเสริม (Needs Improvement)</option>
-                        <option value="1">⭐ เริ่มต้นฝึกฝน (Beginner)</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label>บันทึกเพิ่มเติมจากผู้สอน/ผู้ปกครอง</label>
-                    <textarea id="note" rows="3" placeholder="ข้อสังเกต หรือสิ่งที่เด็กพูดระหว่างทำกิจกรรม..."></textarea>
-                </div>
-
-                <button type="submit" class="btn-submit">บันทึกการเดินทาง ✨</button>
-            </form>
-        </div>
-
-        <div class="card">
-            <div class="card-header">
-                <span>🌱</span>
-                <h2>การเติบโตของหนู (History)</h2>
-            </div>
-            <div id="historyList">
-                <div class="empty-state">ยังไม่มีข้อมูลการบันทึก... เริ่มต้นบันทึกกันเลย!</div>
-            </div>
-        </div>
-
-    </div>
-
-    <script>
-        // JavaScript สำหรับจัดการข้อมูล
-        const form = document.getElementById('devForm');
-        const historyList = document.getElementById('historyList');
-
-        // โหลดข้อมูลเก่าถ้ามี (ใช้ LocalStorage จำลอง Database)
-        let records = JSON.parse(localStorage.getItem('kinderRecords')) || [];
-        renderHistory();
-
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            // รับค่าจากฟอร์ม
-            const activity = document.getElementById('activity').value;
-            const skill = document.getElementById('skillDomain').value;
-            const rating = document.getElementById('rating').value;
-            const note = document.getElementById('note').value;
-            
-            const newRecord = {
-                id: Date.now(),
-                date: new Date().toLocaleDateString('th-TH', { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute:'2-digit'}),
-                activity,
-                skill,
-                rating,
-                note
-            };
-
-            // บันทึกลง Array
-            records.unshift(newRecord); // ใส่ข้อมูลใหม่ไว้บนสุด
-            localStorage.setItem('kinderRecords', JSON.stringify(records));
-
-            // รีเซ็ตฟอร์มและแสดงผลใหม่
-            form.reset();
-            renderHistory();
-            alert('บันทึกข้อมูลสำเร็จแล้วค่ะ! 🎈');
-        });
-
-        function renderHistory() {
-            historyList.innerHTML = '';
-
-            if (records.length === 0) {
-                historyList.innerHTML = '<div class="empty-state">ยังไม่มีข้อมูลการบันทึก... เริ่มต้นบันทึกกันเลย!</div>';
-                return;
-            }
-
-            records.forEach(record => {
-                const item = document.createElement('div');
-                item.className = 'history-item';
-
-                // กำหนดชื่อ Skill และ Class สี
-                let skillName = '';
-                let skillClass = '';
-                switch(record.skill) {
-                    case 'logic': skillName = 'สติปัญญา & ตรรกะ'; skillClass = 'tag-logic'; break;
-                    case 'lang': skillName = 'ภาษา & สื่อสาร'; skillClass = 'tag-lang'; break;
-                    case 'social': skillName = 'อารมณ์ & สังคม'; skillClass = 'tag-social'; break;
-                    case 'create': skillName = 'ความคิดสร้างสรรค์'; skillClass = 'tag-create'; break;
-                    case 'body': skillName = 'ร่างกาย'; skillClass = 'tag-body'; break;
-                }
-
-                // แปลงคะแนนเป็นดาว
-                let stars = '⭐'.repeat(record.rating);
-
-                item.innerHTML = `
-                    <div>
-                        <span class="skill-tag ${skillClass}">${skillName}</span>
-                        <h3 style="margin: 5px 0; color: #555;">${record.activity}</h3>
-                        <p style="font-size: 0.9rem; color: #888;">📅 ${record.date}</p>
-                        ${record.note ? `<p style="font-size: 0.9rem; margin-top:5px; color:#666; font-style:italic;">"${record.note}"</p>` : ''}
-                    </div>
-                    <div class="score-display">
-                        ${stars}
-                    </div>
-                `;
-
-                historyList.appendChild(item);
-            });
-        }
-    </script>
-</body>
-</html># KinderAJourney
+        /* Stats Bar */
+        .
