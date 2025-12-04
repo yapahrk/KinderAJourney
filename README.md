@@ -1,4 +1,4 @@
-<!doctype html>
+
 <html lang="th">
  <head>
   <meta charset="UTF-8">
@@ -6,14 +6,14 @@
   <title>Kinder A Journey</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&amp;family=Prompt:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
-  <script src="/_sdk/data_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700&amp;family=Prompt:wght@400;500;600;700&amp;family=Kanit:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <script src="/_sdk/element_sdk.js"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/data_sdk.js"></script>
   <style>
     body {
       box-sizing: border-box;
       font-family: 'Sarabun', 'Tahoma', 'Arial', sans-serif;
+      font-weight: 400;
     }
     
     * {
@@ -81,6 +81,7 @@
     }
   </style>
   <style>@view-transition { navigation: auto; }</style>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
  </head>
  <body class="min-h-full">
   <div id="app" class="w-full min-h-full"></div>
@@ -93,7 +94,7 @@
       text_color: "#5D4E37",
       primary_action_color: "#FFB4B4",
       secondary_action_color: "#B4D4FF",
-      font_family: "Kanit",
+      font_family: "Sarabun",
       font_size: 16
     };
 
@@ -248,7 +249,7 @@
       '24-36': [
         { food: 'ข้าวกล้อง ขนมปังโฮลวีท', benefit: 'เส้นใย วิตามินบี พลังงานยาวนาน', amount: 'ทุกมื้อ' },
         { food: 'นม ไข่', benefit: 'โปรตีน แคลเซียม', amount: 'ทุกวัน', required: true },
-        { food: 'ผักใบเขียว', benefit: 'ธาตุเหล็ก โฟเลต วิตามินเค', amount: 'ทุกมื้อ', required: true },
+        { food: 'ผักใบเขียว', benefit: 'ธาตุเหล็ก โฟเลต วิตามินเอ', amount: 'ทุกมื้อ', required: true },
         { food: 'ผลไม้ตามฤดูกาล', benefit: 'วิตามินซี สารต้านอนุมูลอิสระ', amount: '2-3 ชนิด/วัน' },
         { food: 'เนื้อสัตว์ ปลา', benefit: 'โปรตีน ธาตุเหล็ก โอเมก้า 3', amount: '2 ครั้ง/วัน' },
         { food: 'น้ำ', benefit: 'ความชุ่มชื้น การขับถ่าย', amount: '6-8 แก้ว/วัน', required: true }
@@ -279,7 +280,7 @@
         { activity: 'เล่นซ่อนหาของเล่น จ้ำจ้า', benefit: 'พัฒนาการความจำ การรับรู้', duration: '15-20 นาที/วัน', required: true },
         { activity: 'ให้หยิบของเล็ก (ภายใต้การดูแล)', benefit: 'กล้ามเนื้อมือละเอียด', duration: '10-15 นาที/วัน', required: true },
         { activity: 'เล่นน้ำในอ่าง', benefit: 'สัมผัส ความสนุกสนาน', duration: '15-20 นาที ขณะอาบน้ำ' },
-        { activity: 'ฝึกนั่งโดยมีหมอนรองรอบตัว', benefit: 'ทรงตัว การนั่ง', duration: '10-20 นาที/ครั้ง' },
+        { activity: 'ฝึกนั่งโดยมีหมอนล้อมรอบตัว', benefit: 'ทรงตัว การนั่ง', duration: '10-20 นาที/ครั้ง' },
         { activity: 'ชี้และบอกชื่อสิ่งของ', benefit: 'ภาษา การเชื่อมโยงคำกับวัตถุ', duration: 'ตลอดเวลาที่พูดคุย' }
       ],
       '9-12': [
@@ -434,7 +435,7 @@
                        border-radius: 12px; 
                        cursor: pointer; 
                        font-size: ${fontSize * 0.9}px;
-                       font-family: ${customFont}, 'Prompt', 'Sarabun', 'Tahoma', sans-serif;
+                       font-family: ${customFont}, 'Sarabun', 'Tahoma', sans-serif;
                        font-weight: 500;
                        transition: all 0.3s ease;
                        display: flex;
@@ -482,20 +483,20 @@
                   <circle cx="70" cy="62" r="2" fill="white"/>
                 </svg>
               </div>
-              <h2 class="cute-font" style="color: ${textColor}; font-size: ${fontSize * 1.5}px; margin-bottom: 16px; font-family: ${customFont}, 'Prompt', 'Sarabun', 'Tahoma', sans-serif;">${appTitle}</h2>
-              <p style="color: ${textColor}; font-size: ${fontSize}px; margin-bottom: 32px; font-family: ${customFont}, 'Sarabun', 'Tahoma', sans-serif; opacity: 0.8;">${welcomeMessage}</p>
+              <h2 class="cute-font" style="color: ${textColor}; font-size: ${fontSize * 1.5}px; margin-bottom: 16px; font-family: ${customFont}, 'Prompt', 'Sarabun', 'Tahoma', sans-serif; font-weight: 500;">${appTitle}</h2>
+              <p style="color: ${textColor}; font-size: ${fontSize}px; margin-bottom: 32px; font-family: ${customFont}, 'Sarabun', 'Tahoma', sans-serif; opacity: 0.8; font-weight: 400;">${welcomeMessage}</p>
               
               <form id="profileForm" style="text-align: left;">
                 <div style="margin-bottom: 20px;">
-                  <label for="childName" style="display: block; color: ${textColor}; font-size: ${fontSize * 0.9}px; margin-bottom: 8px; font-weight: 500; font-family: ${customFont}, 'Kanit', sans-serif;">ชื่อ-นามสกุล เด็ก</label>
+                  <label for="childName" style="display: block; color: ${textColor}; font-size: ${fontSize * 0.9}px; margin-bottom: 8px; font-weight: 500; font-family: ${customFont}, 'Sarabun', sans-serif;">ชื่อลูกน้อย</label>
                   <input type="text" id="childName" required 
-                    style="width: 100%; padding: 12px 16px; border: 2px solid ${secondaryColor}; border-radius: 12px; font-size: ${fontSize}px; font-family: ${customFont}, 'Kanit', sans-serif; box-sizing: border-box; color: ${textColor};">
+                    style="width: 100%; padding: 12px 16px; border: 2px solid ${secondaryColor}; border-radius: 12px; font-size: ${fontSize}px; font-family: ${customFont}, 'Sarabun', sans-serif; box-sizing: border-box; color: ${textColor};">
                 </div>
                 
                 <div style="margin-bottom: 24px;">
-                  <label for="birthDate" style="display: block; color: ${textColor}; font-size: ${fontSize * 0.9}px; margin-bottom: 8px; font-weight: 500; font-family: ${customFont}, 'Kanit', sans-serif;">วันเกิด</label>
+                  <label for="birthDate" style="display: block; color: ${textColor}; font-size: ${fontSize * 0.9}px; margin-bottom: 8px; font-weight: 500; font-family: ${customFont}, 'Sarabun', sans-serif;">วันเกิด</label>
                   <input type="date" id="birthDate" required 
-                    style="width: 100%; padding: 12px 16px; border: 2px solid ${secondaryColor}; border-radius: 12px; font-size: ${fontSize}px; font-family: ${customFont}, 'Kanit', sans-serif; box-sizing: border-box; color: ${textColor};">
+                    style="width: 100%; padding: 12px 16px; border: 2px solid ${secondaryColor}; border-radius: 12px; font-size: ${fontSize}px; font-family: ${customFont}, 'Sarabun', sans-serif; box-sizing: border-box; color: ${textColor};">
                 </div>
                 
                 <button type="submit" id="saveProfileBtn"
@@ -530,19 +531,19 @@
                   <circle cx="70" cy="62" r="2" fill="white"/>
                 </svg>
               </div>
-              <h2 class="cute-font" style="color: ${textColor}; font-size: ${fontSize * 2}px; margin-bottom: 8px; font-family: ${customFont}, 'Prompt', 'Sarabun', sans-serif;">${profileRecord.child_name}</h2>
-              <p style="color: ${textColor}; font-size: ${fontSize * 1.1}px; opacity: 0.7; font-family: ${customFont}, 'Sarabun', 'Tahoma', sans-serif;">อายุ ${ageDisplay}</p>
+              <h2 class="cute-font" style="color: ${textColor}; font-size: ${fontSize * 2}px; margin-bottom: 8px; font-family: ${customFont}, 'Prompt', 'Sarabun', sans-serif; font-weight: 500;">${profileRecord.child_name}</h2>
+              <p style="color: ${textColor}; font-size: ${fontSize * 1.1}px; opacity: 0.7; font-family: ${customFont}, 'Sarabun', 'Tahoma', sans-serif; font-weight: 400;">อายุ ${ageDisplay}</p>
             </div>
             
             <div style="background: linear-gradient(135deg, ${primaryColor}20, ${secondaryColor}20); border-radius: 16px; padding: 24px; margin-bottom: 24px;">
               <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
                 <div style="text-align: center;">
-                  <p style="color: ${textColor}; font-size: ${fontSize * 0.85}px; opacity: 0.7; margin-bottom: 4px; font-family: ${customFont}, 'Kanit', sans-serif;">วันเกิด</p>
-                  <p style="color: ${textColor}; font-size: ${fontSize * 1.1}px; font-weight: 600; font-family: ${customFont}, 'Kanit', sans-serif;">${new Date(profileRecord.birth_date).toLocaleDateString('th-TH', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                  <p style="color: ${textColor}; font-size: ${fontSize * 0.85}px; opacity: 0.7; margin-bottom: 4px; font-family: ${customFont}, 'Sarabun', sans-serif; font-weight: 400;">วันเกิด</p>
+                  <p style="color: ${textColor}; font-size: ${fontSize * 1.1}px; font-weight: 500; font-family: ${customFont}, 'Sarabun', sans-serif;">${new Date(profileRecord.birth_date).toLocaleDateString('th-TH', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
                 </div>
                 <div style="text-align: center;">
-                  <p style="color: ${textColor}; font-size: ${fontSize * 0.85}px; opacity: 0.7; margin-bottom: 4px; font-family: ${customFont}, 'Kanit', sans-serif;">ช่วงวัย</p>
-                  <span class="age-badge" style="background-color: ${primaryColor}; color: white; font-family: ${customFont}, 'Kanit', sans-serif; font-size: ${fontSize * 0.85}px;">${getAgeLabel(getAgeRangeFromMonths(ageMonths))}</span>
+                  <p style="color: ${textColor}; font-size: ${fontSize * 0.85}px; opacity: 0.7; margin-bottom: 4px; font-family: ${customFont}, 'Sarabun', sans-serif; font-weight: 400;">ช่วงวัย</p>
+                  <span class="age-badge" style="background-color: ${primaryColor}; color: white; font-family: ${customFont}, 'Sarabun', sans-serif; font-size: ${fontSize * 0.85}px;">${getAgeLabel(getAgeRangeFromMonths(ageMonths))}</span>
                 </div>
               </div>
             </div>
@@ -588,9 +589,9 @@
       if (!profileRecord) {
         return `
           <div style="max-width: 600px; margin: 40px auto; padding: 0 16px; text-align: center;">
-            <p style="color: ${textColor}; font-size: ${fontSize * 1.1}px; font-family: ${customFont}, 'Kanit', sans-serif;">กรุณากรอกข้อมูลเด็กก่อนใช้งาน</p>
+            <p style="color: ${textColor}; font-size: ${fontSize * 1.1}px; font-family: ${customFont}, 'Sarabun', sans-serif; font-weight: 400;">กรุณากรอกข้อมูลเด็กก่อนใช้งาน</p>
             <button onclick="currentView = 'profile'; renderApp();" 
-              style="margin-top: 20px; background-color: ${primaryColor}; color: white; border: none; padding: 12px 24px; border-radius: 12px; font-size: ${fontSize}px; cursor: pointer; font-family: ${customFont}, 'Kanit', sans-serif;">
+              style="margin-top: 20px; background-color: ${primaryColor}; color: white; border: none; padding: 12px 24px; border-radius: 12px; font-size: ${fontSize}px; cursor: pointer; font-family: ${customFont}, 'Sarabun', sans-serif; font-weight: 500;">
               ไปกรอกข้อมูล
             </button>
           </div>
@@ -612,14 +613,14 @@
       return `
         <div style="max-width: 900px; margin: 0 auto; padding: 24px 16px;">
           <div style="text-align: center; margin-bottom: 24px;">
-            <h1 class="cute-font" style="color: ${textColor}; font-size: ${fontSize * 2}px; margin-bottom: 8px; font-family: ${customFont}, 'Mitr', sans-serif;">${icon} ${title}</h1>
-            <p style="color: ${textColor}; font-size: ${fontSize}px; opacity: 0.7; font-family: ${customFont}, 'Kanit', sans-serif;">ช่วงวัยปัจจุบัน: ${getAgeLabel(currentAgeRange)}</p>
+            <h1 class="cute-font" style="color: ${textColor}; font-size: ${fontSize * 2}px; margin-bottom: 8px; font-family: ${customFont}, 'Prompt', sans-serif; font-weight: 500;">${icon} ${title}</h1>
+            <p style="color: ${textColor}; font-size: ${fontSize}px; opacity: 0.7; font-family: ${customFont}, 'Sarabun', sans-serif; font-weight: 400;">ช่วงวัยปัจจุบัน: ${getAgeLabel(currentAgeRange)}</p>
           </div>
 
           <div style="margin-bottom: 24px; text-align: center;">
-            <label style="color: ${textColor}; font-size: ${fontSize * 0.9}px; margin-right: 12px; font-family: ${customFont}, 'Kanit', sans-serif; font-weight: 500;">เลือกช่วงวัย:</label>
+            <label style="color: ${textColor}; font-size: ${fontSize * 0.9}px; margin-right: 12px; font-family: ${customFont}, 'Sarabun', sans-serif; font-weight: 500;">เลือกช่วงวัย:</label>
             <select id="ageFilter" onchange="currentAgeFilter = this.value; renderApp();" 
-              style="padding: 8px 16px; border: 2px solid ${secondaryColor}; border-radius: 8px; font-size: ${fontSize * 0.9}px; font-family: ${customFont}, 'Kanit', sans-serif; color: ${textColor}; background-color: white;">
+              style="padding: 8px 16px; border: 2px solid ${secondaryColor}; border-radius: 8px; font-size: ${fontSize * 0.9}px; font-family: ${customFont}, 'Sarabun', sans-serif; color: ${textColor}; background-color: white;">
               <option value="all" ${currentAgeFilter === 'all' ? 'selected' : ''}>ช่วงวัยปัจจุบัน (${getAgeLabel(currentAgeRange)})</option>
               ${ageRanges.map(range => `
                 <option value="${range}" ${currentAgeFilter === range ? 'selected' : ''}>${getAgeLabel(range)}</option>
@@ -629,7 +630,7 @@
 
           ${requiredItems.length > 0 ? `
             <div style="margin-bottom: 16px;">
-              <h3 style="color: ${textColor}; font-size: ${fontSize * 1.2}px; font-weight: 600; font-family: ${customFont}, 'Kanit', sans-serif; margin-bottom: 12px;">✅ รายการหลัก (ควรมี)</h3>
+              <h3 style="color: ${textColor}; font-size: ${fontSize * 1.2}px; font-weight: 500; font-family: ${customFont}, 'Sarabun', sans-serif; margin-bottom: 12px;">✅ รายการหลัก (ควรมี)</h3>
             </div>
           ` : ''}
 
@@ -650,23 +651,23 @@
                       style="width: 24px; height: 24px; cursor: pointer; flex-shrink: 0; margin-top: 4px; accent-color: ${primaryColor};">
                     
                     <div style="flex: 1;">
-                      <h3 style="color: ${textColor}; font-size: ${fontSize * 1.1}px; margin-bottom: 8px; font-weight: 600; font-family: ${customFont}, 'Kanit', sans-serif; ${isCompleted ? 'text-decoration: line-through; opacity: 0.6;' : ''}">${item.title || item.name || item.food || item.activity}</h3>
-                      <p style="color: ${textColor}; font-size: ${fontSize * 0.9}px; opacity: 0.7; margin-bottom: 8px; font-family: ${customFont}, 'Kanit', sans-serif;">${item.description || item.benefit || ''}</p>
+                      <h3 style="color: ${textColor}; font-size: ${fontSize * 1.1}px; margin-bottom: 8px; font-weight: 500; font-family: ${customFont}, 'Sarabun', sans-serif; ${isCompleted ? 'text-decoration: line-through; opacity: 0.6;' : ''}">${item.title || item.name || item.food || item.activity}</h3>
+                      <p style="color: ${textColor}; font-size: ${fontSize * 0.9}px; opacity: 0.7; margin-bottom: 8px; font-family: ${customFont}, 'Sarabun', sans-serif; font-weight: 400;">${item.description || item.benefit || ''}</p>
                       ${item.timing || item.amount || item.duration ? `
-                        <p style="color: ${primaryColor}; font-size: ${fontSize * 0.85}px; font-weight: 500; margin-bottom: 12px; font-family: ${customFont}, 'Kanit', sans-serif;">📅 ${item.timing || item.amount || item.duration}</p>
+                        <p style="color: ${primaryColor}; font-size: ${fontSize * 0.85}px; font-weight: 500; margin-bottom: 12px; font-family: ${customFont}, 'Sarabun', sans-serif;">📅 ${item.timing || item.amount || item.duration}</p>
                       ` : ''}
                       
                       ${isCompleted && completedDate ? `
-                        <p style="color: ${primaryColor}; font-size: ${fontSize * 0.85}px; margin-bottom: 8px; font-family: ${customFont}, 'Kanit', sans-serif;">✅ ทำเมื่อ: ${completedDate}</p>
+                        <p style="color: ${primaryColor}; font-size: ${fontSize * 0.85}px; margin-bottom: 8px; font-family: ${customFont}, 'Sarabun', sans-serif; font-weight: 400;">✅ ทำเมื่อ: ${completedDate}</p>
                       ` : ''}
                       
                       <div style="margin-top: 12px;">
-                        <label style="color: ${textColor}; font-size: ${fontSize * 0.85}px; font-weight: 500; display: block; margin-bottom: 6px; font-family: ${customFont}, 'Kanit', sans-serif;">📝 หมายเหตุ:</label>
+                        <label style="color: ${textColor}; font-size: ${fontSize * 0.85}px; font-weight: 500; display: block; margin-bottom: 6px; font-family: ${customFont}, 'Sarabun', sans-serif;">📝 หมายเหตุ:</label>
                         <textarea 
                           id="notes-${itemId}"
                           placeholder="เพิ่มหมายเหตุของคุณ..."
                           onblur="updateNotes('${category}', '${displayAgeRange}', '${itemId}', this.value, ${JSON.stringify(item).replace(/"/g, '&quot;')})"
-                          style="width: 100%; padding: 10px; border: 2px solid ${secondaryColor}; border-radius: 8px; font-size: ${fontSize * 0.85}px; font-family: ${customFont}, 'Kanit', sans-serif; resize: vertical; min-height: 60px; box-sizing: border-box; color: ${textColor};">${notes}</textarea>
+                          style="width: 100%; padding: 10px; border: 2px solid ${secondaryColor}; border-radius: 8px; font-size: ${fontSize * 0.85}px; font-family: ${customFont}, 'Sarabun', sans-serif; resize: vertical; min-height: 60px; box-sizing: border-box; color: ${textColor};">${notes}</textarea>
                       </div>
                     </div>
                   </div>
@@ -677,7 +678,7 @@
 
           ${optionalItems.length > 0 ? `
             <div style="margin-bottom: 16px;">
-              <h3 style="color: ${textColor}; font-size: ${fontSize * 1.2}px; font-weight: 600; font-family: ${customFont}, 'Kanit', sans-serif; margin-bottom: 12px;">💡 รายการเสริม (แนะนำ)</h3>
+              <h3 style="color: ${textColor}; font-size: ${fontSize * 1.2}px; font-weight: 500; font-family: ${customFont}, 'Sarabun', sans-serif; margin-bottom: 12px;">💡 รายการเสริม (แนะนำ)</h3>
             </div>
 
             <div style="display: grid; gap: 16px;">
@@ -697,23 +698,23 @@
                         style="width: 24px; height: 24px; cursor: pointer; flex-shrink: 0; margin-top: 4px; accent-color: ${primaryColor};">
                       
                       <div style="flex: 1;">
-                        <h3 style="color: ${textColor}; font-size: ${fontSize * 1.1}px; margin-bottom: 8px; font-weight: 600; font-family: ${customFont}, 'Kanit', sans-serif; ${isCompleted ? 'text-decoration: line-through; opacity: 0.6;' : ''}">${item.title || item.name || item.food || item.activity}</h3>
-                        <p style="color: ${textColor}; font-size: ${fontSize * 0.9}px; opacity: 0.7; margin-bottom: 8px; font-family: ${customFont}, 'Kanit', sans-serif;">${item.description || item.benefit || ''}</p>
+                        <h3 style="color: ${textColor}; font-size: ${fontSize * 1.1}px; margin-bottom: 8px; font-weight: 500; font-family: ${customFont}, 'Sarabun', sans-serif; ${isCompleted ? 'text-decoration: line-through; opacity: 0.6;' : ''}">${item.title || item.name || item.food || item.activity}</h3>
+                        <p style="color: ${textColor}; font-size: ${fontSize * 0.9}px; opacity: 0.7; margin-bottom: 8px; font-family: ${customFont}, 'Sarabun', sans-serif; font-weight: 400;">${item.description || item.benefit || ''}</p>
                         ${item.timing || item.amount || item.duration ? `
-                          <p style="color: ${primaryColor}; font-size: ${fontSize * 0.85}px; font-weight: 500; margin-bottom: 12px; font-family: ${customFont}, 'Kanit', sans-serif;">📅 ${item.timing || item.amount || item.duration}</p>
+                          <p style="color: ${primaryColor}; font-size: ${fontSize * 0.85}px; font-weight: 500; margin-bottom: 12px; font-family: ${customFont}, 'Sarabun', sans-serif;">📅 ${item.timing || item.amount || item.duration}</p>
                         ` : ''}
                         
                         ${isCompleted && completedDate ? `
-                          <p style="color: ${primaryColor}; font-size: ${fontSize * 0.85}px; margin-bottom: 8px; font-family: ${customFont}, 'Kanit', sans-serif;">✅ ทำเมื่อ: ${completedDate}</p>
+                          <p style="color: ${primaryColor}; font-size: ${fontSize * 0.85}px; margin-bottom: 8px; font-family: ${customFont}, 'Sarabun', sans-serif; font-weight: 400;">✅ ทำเมื่อ: ${completedDate}</p>
                         ` : ''}
                         
                         <div style="margin-top: 12px;">
-                          <label style="color: ${textColor}; font-size: ${fontSize * 0.85}px; font-weight: 500; display: block; margin-bottom: 6px; font-family: ${customFont}, 'Kanit', sans-serif;">📝 หมายเหตุ:</label>
+                          <label style="color: ${textColor}; font-size: ${fontSize * 0.85}px; font-weight: 500; display: block; margin-bottom: 6px; font-family: ${customFont}, 'Sarabun', sans-serif;">📝 หมายเหตุ:</label>
                           <textarea 
                             id="notes-${itemId}"
                             placeholder="เพิ่มหมายเหตุของคุณ..."
                             onblur="updateNotes('${category}', '${displayAgeRange}', '${itemId}', this.value, ${JSON.stringify(item).replace(/"/g, '&quot;')})"
-                            style="width: 100%; padding: 10px; border: 2px solid ${secondaryColor}; border-radius: 8px; font-size: ${fontSize * 0.85}px; font-family: ${customFont}, 'Kanit', sans-serif; resize: vertical; min-height: 60px; box-sizing: border-box; color: ${textColor};">${notes}</textarea>
+                            style="width: 100%; padding: 10px; border: 2px solid ${secondaryColor}; border-radius: 8px; font-size: ${fontSize * 0.85}px; font-family: ${customFont}, 'Sarabun', sans-serif; resize: vertical; min-height: 60px; box-sizing: border-box; color: ${textColor};">${notes}</textarea>
                         </div>
                       </div>
                     </div>
@@ -823,28 +824,28 @@
 
       modal.innerHTML = `
         <div style="background-color: ${surfaceColor}; border-radius: 20px; padding: 32px; max-width: 500px; width: 100%; max-height: 90%; overflow-y: auto;">
-          <h2 class="cute-font" style="color: ${textColor}; font-size: ${fontSize * 1.5}px; margin-bottom: 24px; font-family: ${customFont}, 'Mitr', sans-serif;">แก้ไขข้อมูลเด็ก</h2>
+          <h2 class="cute-font" style="color: ${textColor}; font-size: ${fontSize * 1.5}px; margin-bottom: 24px; font-family: ${customFont}, 'Prompt', sans-serif; font-weight: 500;">แก้ไขข้อมูลเด็ก</h2>
           
           <form id="editProfileForm">
             <div style="margin-bottom: 20px;">
-              <label style="display: block; color: ${textColor}; font-size: ${fontSize * 0.9}px; margin-bottom: 8px; font-weight: 500; font-family: ${customFont}, 'Kanit', sans-serif;">ชื่อ-นามสกุล เด็ก</label>
+              <label style="display: block; color: ${textColor}; font-size: ${fontSize * 0.9}px; margin-bottom: 8px; font-weight: 500; font-family: ${customFont}, 'Sarabun', sans-serif;">ชื่อลูกน้อย</label>
               <input type="text" id="editChildName" value="${profileRecord.child_name}" required 
-                style="width: 100%; padding: 12px 16px; border: 2px solid ${secondaryColor}; border-radius: 12px; font-size: ${fontSize}px; font-family: ${customFont}, 'Kanit', sans-serif; box-sizing: border-box; color: ${textColor};">
+                style="width: 100%; padding: 12px 16px; border: 2px solid ${secondaryColor}; border-radius: 12px; font-size: ${fontSize}px; font-family: ${customFont}, 'Sarabun', sans-serif; box-sizing: border-box; color: ${textColor};">
             </div>
             
             <div style="margin-bottom: 24px;">
-              <label style="display: block; color: ${textColor}; font-size: ${fontSize * 0.9}px; margin-bottom: 8px; font-weight: 500; font-family: ${customFont}, 'Kanit', sans-serif;">วันเกิด</label>
+              <label style="display: block; color: ${textColor}; font-size: ${fontSize * 0.9}px; margin-bottom: 8px; font-weight: 500; font-family: ${customFont}, 'Sarabun', sans-serif;">วันเกิด</label>
               <input type="date" id="editBirthDate" value="${profileRecord.birth_date}" required 
-                style="width: 100%; padding: 12px 16px; border: 2px solid ${secondaryColor}; border-radius: 12px; font-size: ${fontSize}px; font-family: ${customFont}, 'Kanit', sans-serif; box-sizing: border-box; color: ${textColor};">
+                style="width: 100%; padding: 12px 16px; border: 2px solid ${secondaryColor}; border-radius: 12px; font-size: ${fontSize}px; font-family: ${customFont}, 'Sarabun', sans-serif; box-sizing: border-box; color: ${textColor};">
             </div>
             
             <div style="display: flex; gap: 12px;">
               <button type="submit" id="updateProfileBtn"
-                style="flex: 1; background-color: ${primaryColor}; color: white; border: none; padding: 14px; border-radius: 12px; font-size: ${fontSize}px; font-weight: 600; cursor: pointer; font-family: ${customFont}, 'Kanit', sans-serif;">
+                style="flex: 1; background-color: ${primaryColor}; color: white; border: none; padding: 14px; border-radius: 12px; font-size: ${fontSize}px; font-weight: 500; cursor: pointer; font-family: ${customFont}, 'Sarabun', sans-serif;">
                 บันทึก
               </button>
               <button type="button" onclick="this.closest('[style*=fixed]').remove()"
-                style="flex: 1; background-color: ${secondaryColor}; color: ${textColor}; border: none; padding: 14px; border-radius: 12px; font-size: ${fontSize}px; font-weight: 500; cursor: pointer; font-family: ${customFont}, 'Kanit', sans-serif;">
+                style="flex: 1; background-color: ${secondaryColor}; color: ${textColor}; border: none; padding: 14px; border-radius: 12px; font-size: ${fontSize}px; font-weight: 500; cursor: pointer; font-family: ${customFont}, 'Sarabun', sans-serif;">
                 ยกเลิก
               </button>
             </div>
@@ -959,7 +960,6 @@
     };
 
     async function init() {
-      // รอให้ฟอนต์โหลดเสร็จก่อน
       if (document.fonts) {
         try {
           await document.fonts.ready;
@@ -971,7 +971,6 @@
           fontsLoaded = true;
         }
       } else {
-        // ถ้าไม่รองรับ Font Loading API ให้รอสักครู่
         await new Promise(resolve => setTimeout(resolve, 1500));
         fontsLoaded = true;
       }
@@ -1052,5 +1051,5 @@
 
     init();
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a8a5ce546eb8ad1',t:'MTc2NDg0MTQ0Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a8a9b66e4965fba',t:'MTc2NDg0NDAwMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
