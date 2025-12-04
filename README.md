@@ -509,95 +509,6 @@
       font-size: 1.1rem;
     }
 
-    .child-profile-section {
-      background: white;
-      border-radius: 16px;
-      padding: 2rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-    }
-
-    .profile-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1.5rem;
-      padding-bottom: 1rem;
-      border-bottom: 2px solid #FFD4E5;
-    }
-
-    .profile-header h3 {
-      font-size: 1.5rem;
-      color: #FF9ECE;
-      margin: 0;
-    }
-
-    .profile-display {
-      min-height: 150px;
-    }
-
-    .profile-empty {
-      text-align: center;
-      padding: 2rem;
-      color: #666;
-    }
-
-    .profile-info-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .profile-info-card {
-      background: #FFF9E6;
-      padding: 1.25rem;
-      border-radius: 12px;
-      border-left: 4px solid #FFD4E5;
-    }
-
-    .profile-info-label {
-      font-size: 0.85rem;
-      color: #666;
-      margin-bottom: 0.25rem;
-      font-weight: 500;
-    }
-
-    .profile-info-value {
-      font-size: 1.1rem;
-      color: #333;
-      font-weight: 600;
-    }
-
-    .profile-age-highlight {
-      background: linear-gradient(135deg, #A7D7F9 0%, #FFD4E5 100%);
-      color: white;
-      padding: 1.5rem;
-      border-radius: 12px;
-      text-align: center;
-      grid-column: 1 / -1;
-    }
-
-    .profile-age-highlight .age-number {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-
-    .profile-age-highlight .age-label {
-      font-size: 1rem;
-      opacity: 0.95;
-    }
-
-    .profile-form-container {
-      margin-top: 1.5rem;
-    }
-
-    .form-actions {
-      display: flex;
-      gap: 0.5rem;
-      margin-top: 1rem;
-    }
-
     .loading-spinner {
       display: inline-block;
       width: 20px;
@@ -680,53 +591,12 @@
    <div class="main-content">
     <header class="app-header">
      <h1 id="app-title">🌟 Kinder A Journey</h1>
-     <p id="welcome-message">ติดตามพัฒนาการลูก���้อยของคุณ</p>
+     <p id="welcome-message">ติดตามพัฒนาการลูกน้อยของคุณ</p>
     </header>
     <nav class="tab-navigation"><button class="tab-btn active" data-tab="dashboard">📊 ภาพรวม</button> <button class="tab-btn" data-tab="development">🧠 พัฒนาการ</button> <button class="tab-btn" data-tab="vaccine">💉 วัคซีน</button> <button class="tab-btn" data-tab="nutrition">🍎 โภชนาการ</button> <button class="tab-btn" data-tab="activities">🎨 กิจกรรม</button>
     </nav><!-- Dashboard Tab -->
     <div id="dashboard" class="tab-content active">
-     <h2 class="section-title">📊 ภาพรวมพัฒนาการ</h2><!-- Child Profile Section -->
-     <div class="child-profile-section">
-      <div class="profile-header">
-       <h3>👶 ข้อมูลส่วนตัวเด็ก</h3><button id="edit-profile-btn" class="btn-small" style="background: #FFD4E5; color: #FF9ECE;">แก้ไข</button>
-      </div>
-      <div id="profile-display" class="profile-display">
-       <div class="profile-empty">
-        <div class="empty-state-icon" style="font-size: 3rem;">
-         👶
-        </div>
-        <p>ยังไม่มีข้อมูลเด็ก กรุณาเพิ่มข้อมูล</p><button id="add-profile-btn" class="btn-primary" style="margin-top: 1rem;">เพิ่มข้อมูลเด็ก</button>
-       </div>
-      </div>
-      <div id="profile-form-container" class="profile-form-container" style="display: none;">
-       <form id="child-profile-form">
-        <div class="form-row">
-         <div class="form-group"><label for="child-fullname">ชื่อ-นามสกุล</label> <input type="text" id="child-fullname" required>
-         </div>
-         <div class="form-group"><label for="child-nickname">ชื่อเล่น</label> <input type="text" id="child-nickname" required>
-         </div>
-        </div>
-        <div class="form-row">
-         <div class="form-group"><label for="child-birthdate">วันเกิด</label> <input type="date" id="child-birthdate" required>
-         </div>
-         <div class="form-group"><label for="child-gender">เพศ</label> <select id="child-gender" required> <option value="">เลือกเพศ</option> <option value="male">ชาย</option> <option value="female">หญิง</option> </select>
-         </div>
-        </div>
-        <div class="form-row">
-         <div class="form-group"><label for="child-blood">กรุ๊ปเลือด</label> <select id="child-blood"> <option value="">เลือกกรุ๊ปเลือด</option> <option value="A">A</option> <option value="B">B</option> <option value="AB">AB</option> <option value="O">O</option> </select>
-         </div>
-         <div class="form-group"><label for="child-weight">น้ำหนักแรกเกิด (กก.)</label> <input type="number" id="child-weight" step="0.1" min="0">
-         </div>
-         <div class="form-group"><label for="child-height">ส่วนสูงแรกเกิด (ซม.)</label> <input type="number" id="child-height" step="0.1" min="0">
-         </div>
-        </div>
-        <div class="form-group"><label for="child-notes">หมายเหตุ</label> <textarea id="child-notes" placeholder="บันทึกข้อมูลเพิ่มเติม เช่น โรคประจำตัว การแพ้ยา..."></textarea>
-        </div>
-        <div class="form-actions"><button type="submit" class="btn-primary"> <span class="btn-text">บันทึกข้อมูล</span> </button> <button type="button" id="cancel-profile-btn" class="btn-small" style="background: #fee; color: #dc2626; margin-left: 0.5rem;">ยกเลิก</button>
-        </div>
-       </form>
-      </div>
-     </div>
+     <h2 class="section-title">📊 ภาพรวมพัฒนาการ</h2>
      <div class="stats-grid">
       <div class="stat-card">
        <div class="stat-value" id="total-milestones">
@@ -749,7 +619,7 @@
         0
        </div>
        <div class="stat-label">
-        วั���ซีนที่ได้รับ
+        วัคซีนที่ได้รับ
        </div>
       </div>
       <div class="stat-card">
@@ -883,7 +753,7 @@
     <div id="nutrition" class="tab-content">
      <h2 class="section-title">🍎 บันทึกโภชนาการ</h2>
      <div class="milestone-age-selector">
-      <h3 style="margin-bottom: 1rem; color: #FF9ECE;">����️ คำแนะนำอาหา��ตามช่วงอายุ</h3>
+      <h3 style="margin-bottom: 1rem; color: #FF9ECE;">🍽️ คำแนะนำอาหารตามช่วงอายุ</h3>
       <div class="age-selector-grid"><button class="age-selector-btn" data-nutrition-age="0-6">0-6 เดือน</button> <button class="age-selector-btn" data-nutrition-age="6-12">6-12 เดือน</button> <button class="age-selector-btn" data-nutrition-age="12-24">1-2 ปี</button> <button class="age-selector-btn" data-nutrition-age="24-36">2-3 ปี</button> <button class="age-selector-btn" data-nutrition-age="36-60">3-5 ปี</button>
       </div>
      </div>
@@ -901,15 +771,15 @@
        <div class="form-row">
         <div class="form-group"><label for="nutr-child-name">ชื่อเด็ก</label> <input type="text" id="nutr-child-name" required>
         </div>
-        <div class="form-group"><label for="nutr-title">ชนิดอาหาร/สารอาหาร</label> <input type="text" id="nutr-title" placeholder="เช่น นมแม่, ธาต��เหล็ก" required>
+        <div class="form-group"><label for="nutr-title">ชนิดอาหาร/สารอาหาร</label> <input type="text" id="nutr-title" placeholder="เช่น นมแม่, ธาตุเหล็ก" required>
         </div>
-        <div class="form-group"><label for="nutr-category">ประ��ภท</label> <select id="nutr-category" required> <option value="milk">นม</option> <option value="food">อาหาร</option> <option value="supplement">วิตามิน/แร่ธาตุ</option> </select>
+        <div class="form-group"><label for="nutr-category">ประเภท</label> <select id="nutr-category" required> <option value="milk">นม</option> <option value="food">อาหาร</option> <option value="supplement">วิตามิน/แร่ธาตุ</option> </select>
         </div>
         <div class="form-group"><label for="nutr-date">วันที่</label> <input type="date" id="nutr-date" required>
         </div>
        </div>
        <div class="form-group"><label for="nutr-notes">หมายเหตุ</label> <textarea id="nutr-notes" placeholder="บันทึกปริมาณ ความถี่ หรือข้อมูลเพิ่มเติม..."></textarea>
-       </div><button type="submit" class="btn-primary"> <span class="btn-text">บันทึกโภชนา���าร</span> </button>
+       </div><button type="submit" class="btn-primary"> <span class="btn-text">บันทึกโภชนาการ</span> </button>
       </form>
      </div>
      <div id="nutrition-list"></div>
@@ -1041,7 +911,7 @@
             "มองหาของที่ตกหล่น",
             "เริ่มเข้าใจคำง่ายๆ เช่น 'ไม่ได้'",
             "ชี้สิ่งต่างๆ ด้วยนิ้ว",
-            "เริ่มสำรวจความสัมพันธ์เชิงเหตุผล"
+            "เริ่มเล่นสำรวจความสัมพันธ์เชิงเหตุผล"
           ],
           social: [
             "แยกแยะคนแปลกหน้า อาจกลัวหรือเขิน",
@@ -1141,7 +1011,7 @@
           ],
           language: [
             "ชี้สิ่งต่างๆ ในหนังสือเมื่อถูกถาม",
-            "รู้จักคนที่คุ้นเคย และส่วนต่างๆ ของร่างกาย",
+            "รู้จักชื่อคนที่คุ้นเคย และส่วนต่างๆ ของร่างกาย",
             "พูดประโยค 2-4 คำ",
             "ทำตามคำสั่ง 2 ขั้นตอน"
           ]
@@ -1187,7 +1057,7 @@
           main: {
             title: "🍼 อาหารหลัก",
             items: [
-              { name: "นมแม่", detail: "ดีที่สุด! ให้นมแม่เพียงอย่างเดียวตลออด 6 เดือนแรก ฟรี มีภูมิคุ้มกัน เหมาะกับลูกที่สุด" },
+              { name: "นมแม่", detail: "ดีที่สุด! ให้นมแม่เพียงอย่างเดียวตลอด 6 เดือนแรก ฟรี มีภูมิคุ้มกัน เหมาะกับลูกที่สุด" },
               { name: "นมผสม", detail: "หากไม่สามารถให้นมแม่ได้ ใช้นมผสมสูตร 1 ตามคำแนะนำของแพทย์ ราคาประมาณ 300-800 บาท/กระป๋อง" }
             ]
           },
@@ -1310,7 +1180,7 @@
             title: "☀️ อาหารกลางวัน (40-70 บาท)",
             items: [
               { name: "ข้าวราดแกงผักผสม", detail: "40 บาท - ครบ 5 หมู่" },
-              { name: "ผัดผัก + เนื้อสัตว์ + ข้าว", detail: "50 บาท - ทำเองได้ที่บ้าน" },
+              { name: "ผัดผัก + เนื้อสัตว์ + ข้าว", detail: "50 บาท - ทำที่บ้าน" },
               { name: "ข้าวมันไก่", detail: "40-50 บาท - เด็กชอบ มีผักกาดดอง" },
               { name: "ข้าวผัดอเมริกัน", detail: "50-60 บาท - มีผักเยอะ" }
             ]
@@ -1320,7 +1190,7 @@
             items: [
               { name: "ส้มตำไทย (ไม่เผ็ด) + ไก่ย่าง", detail: "50 บาท - วิตามินเยอะ" },
               { name: "ผัดไทยไม่เผ็ด", detail: "40 บาท - โปรตีนจากไข่ ถั่ว" },
-              { name: "แกงจืดเต้าหู้ + ข้าว", detail: "35 บาท - ราคา ถูก มีประโยชน์" },
+              { name: "แกงจืดเต้าหู้ + ข้าว", detail: "35 บาท - ง่าย ถูก มีประโยชน์" },
               { name: "ไข่พะโล้", detail: "30 บาท - ทำง่าย เด็กชอบ" }
             ]
           },
@@ -1362,7 +1232,7 @@
               { name: "ปลาทู/ปลาซาบะ", detail: "30-50 บาท - โอเมก้า 3 ดีต่อสมอง" },
               { name: "ไข่ (ต้ม/คน/เจียว)", detail: "15-20 บาท/10 ฟอง - โคลีน ช่วยจดจำ" },
               { name: "ถั่วเหลือง/เต้าหู้", detail: "15-25 บาท - เลซิติน บำรุงสมอง" },
-              { name: "ถั่วเมล็ดแห้ง", detail: "30-50 บาท - โปรตีน วิตามิน" }
+              { name: "ถั่วเมล็ดแห้ง", detail: "30-50 บาท - โปรตีน วิตามินบี" }
             ]
           },
           lunch_box: {
@@ -1500,7 +1370,7 @@
           {
             icon: "🎨",
             title: "วาดภาพ + ระบายสี",
-            description: "ให้ลูกใช้สีเทียน ดินสอสี หรือสีน้ำวาดเขี่ย บนกระดาษขนาดใหญ่ ไม่ต้องห่วงความสวยงาม",
+            description: "ให้ลูกใช้สีเทียน ดินสอสี หรือสีน้ำวาดเขี่ยๆ บนกระดาษขนาดใหญ่ ไม่ต้องห่วงความสวยงาม",
             benefits: "✏️ ฝึกกล้ามเนื้อมือ | 🌈 กระตุ้นความคิดสร้างสรรค์"
           },
           {
@@ -1536,7 +1406,7 @@
           {
             icon: "✂️",
             title: "ตัด-ปะ-ติด",
-            description: "ให้ลูกใช้กรรไกรปลายมนตัดกระดาษ แล้วนำมาติดเป็นรูปทรง ใช้ก��วแท่งปลอดภัย",
+            description: "ให้ลูกใช้กรรไกรปลายมนตัดกระดาษ แล้วนำมาติดเป็นรูปทรง ใช้กาวแท่งปลอดภัย",
             benefits: "✋ พัฒนากล้ามเนื้อมือละเอียด | 🎨 ส่งเสริมความคิดสร้างสรรค์"
           },
           {
@@ -1646,7 +1516,7 @@
           },
           {
             name: "วัคซีนป้องกันโรคปอดอักเสบ ครั้งที่ 1 (PCV1)",
-            description: "ป้องกันโรคติดเชื้อนิวโมคอคอส เช่น ปอดบวม เยื่อหุ้มสมองอักเสบ"
+            description: "ป้องกันโรคติดเชื้อนิวโมคอคคัส เช่น ปอดบวม เยื่อหุ้มสมองอักเสบ"
           },
           {
             name: "วัคซีนโรต้าไวรัส ครั้งที่ 1 (RV1)",
@@ -1771,7 +1641,6 @@
     const dataHandler = {
       onDataChanged(data) {
         allData = data;
-        renderChildProfile();
         updateDashboard();
         renderDevelopmentList();
         renderVaccineList();
@@ -1918,23 +1787,6 @@
         });
       });
 
-      document.getElementById('child-profile-form').addEventListener('submit', async (e) => {
-        e.preventDefault();
-        await handleProfileSubmit(e);
-      });
-
-      document.getElementById('add-profile-btn').addEventListener('click', () => {
-        showProfileForm();
-      });
-
-      document.getElementById('edit-profile-btn').addEventListener('click', () => {
-        showProfileForm(true);
-      });
-
-      document.getElementById('cancel-profile-btn').addEventListener('click', () => {
-        hideProfileForm();
-      });
-
       document.getElementById('development-form').addEventListener('submit', async (e) => {
         e.preventDefault();
         await handleDevelopmentSubmit(e);
@@ -2022,7 +1874,7 @@
       
       const categoryInfo = {
         physical: { icon: '🏃', name: 'พัฒนาการด้านร่างกาย' },
-        cognitive: { icon: '🧩', name: 'พัฒนาการด้านสต��ปัญญา' },
+        cognitive: { icon: '🧩', name: 'พัฒนาการด้านสติปัญญา' },
         social: { icon: '👥', name: 'พัฒนาการด้านสังคม-อารมณ์' },
         language: { icon: '💬', name: 'พัฒนาการด้านภาษา' }
       };
@@ -2156,173 +2008,6 @@
       
       document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
       document.getElementById(tabName).classList.add('active');
-    }
-
-    function showProfileForm(isEdit = false) {
-      const formContainer = document.getElementById('profile-form-container');
-      const profileDisplay = document.getElementById('profile-display');
-      
-      if (isEdit) {
-        const profile = allData.find(d => d.type === 'child_profile');
-        if (profile) {
-          document.getElementById('child-fullname').value = profile.fullname || '';
-          document.getElementById('child-nickname').value = profile.nickname || '';
-          document.getElementById('child-birthdate').value = profile.birthdate || '';
-          document.getElementById('child-gender').value = profile.gender || '';
-          document.getElementById('child-blood').value = profile.blood_type || '';
-          document.getElementById('child-weight').value = profile.birth_weight || '';
-          document.getElementById('child-height').value = profile.birth_height || '';
-          document.getElementById('child-notes').value = profile.notes || '';
-        }
-      }
-      
-      formContainer.style.display = 'block';
-      profileDisplay.style.display = 'none';
-    }
-
-    function hideProfileForm() {
-      document.getElementById('profile-form-container').style.display = 'none';
-      document.getElementById('profile-display').style.display = 'block';
-      document.getElementById('child-profile-form').reset();
-    }
-
-    async function handleProfileSubmit(e) {
-      const submitBtn = e.target.querySelector('button[type="submit"]');
-      const btnText = submitBtn.querySelector('.btn-text');
-      const originalText = btnText.textContent;
-      
-      btnText.innerHTML = '<span class="loading-spinner"></span> กำลังบันทึก...';
-      submitBtn.disabled = true;
-
-      const existingProfile = allData.find(d => d.type === 'child_profile');
-      
-      const formData = {
-        id: existingProfile ? existingProfile.id : Date.now().toString(),
-        type: 'child_profile',
-        fullname: document.getElementById('child-fullname').value,
-        nickname: document.getElementById('child-nickname').value,
-        birthdate: document.getElementById('child-birthdate').value,
-        gender: document.getElementById('child-gender').value,
-        blood_type: document.getElementById('child-blood').value,
-        birth_weight: parseFloat(document.getElementById('child-weight').value) || null,
-        birth_height: parseFloat(document.getElementById('child-height').value) || null,
-        notes: document.getElementById('child-notes').value,
-        created_at: existingProfile ? existingProfile.created_at : new Date().toISOString(),
-        updated_at: new Date().toISOString()
-      };
-
-      let result;
-      if (existingProfile) {
-        formData.__backendId = existingProfile.__backendId;
-        result = await window.dataSdk.update(formData);
-      } else {
-        result = await window.dataSdk.create(formData);
-      }
-      
-      if (result.isOk) {
-        hideProfileForm();
-      } else {
-        showMessage('เกิดข้อผิดพลาดในการบันทึก', 'error');
-      }
-
-      btnText.textContent = originalText;
-      submitBtn.disabled = false;
-    }
-
-    function renderChildProfile() {
-      const profile = allData.find(d => d.type === 'child_profile');
-      const displayContainer = document.getElementById('profile-display');
-      const editBtn = document.getElementById('edit-profile-btn');
-      
-      if (!profile) {
-        displayContainer.innerHTML = `
-          <div class="profile-empty">
-            <div class="empty-state-icon" style="font-size: 3rem;">👶</div>
-            <p>ยังไม่มีข้อมูลเด็ก กรุณาเพิ่มข้อมูล</p>
-            <button id="add-profile-btn" class="btn-primary" style="margin-top: 1rem;">เพิ่มข้อมูลเด็ก</button>
-          </div>
-        `;
-        editBtn.style.display = 'none';
-        
-        document.getElementById('add-profile-btn').addEventListener('click', () => {
-          showProfileForm();
-        });
-        return;
-      }
-      
-      editBtn.style.display = 'block';
-      
-      const birthDate = new Date(profile.birthdate);
-      const today = new Date();
-      const ageInMonths = Math.floor((today - birthDate) / (1000 * 60 * 60 * 24 * 30.44));
-      const years = Math.floor(ageInMonths / 12);
-      const months = ageInMonths % 12;
-      
-      let ageText = '';
-      if (years > 0) {
-        ageText = `${years} ปี ${months} เดือน`;
-      } else {
-        ageText = `${months} เดือน`;
-      }
-      
-      const genderText = profile.gender === 'male' ? '👦 ชาย' : '👧 หญิง';
-      
-      displayContainer.innerHTML = `
-        <div class="profile-info-grid">
-          <div class="profile-age-highlight">
-            <div class="age-number">${escapeHtml(ageText)}</div>
-            <div class="age-label">อายุปัจจุบัน</div>
-          </div>
-          
-          <div class="profile-info-card">
-            <div class="profile-info-label">ชื่อ-นามสกุล</div>
-            <div class="profile-info-value">${escapeHtml(profile.fullname)}</div>
-          </div>
-          
-          <div class="profile-info-card">
-            <div class="profile-info-label">ชื่อเล่น</div>
-            <div class="profile-info-value">${escapeHtml(profile.nickname)}</div>
-          </div>
-          
-          <div class="profile-info-card">
-            <div class="profile-info-label">วันเกิด</div>
-            <div class="profile-info-value">${formatDate(profile.birthdate)}</div>
-          </div>
-          
-          <div class="profile-info-card">
-            <div class="profile-info-label">เพศ</div>
-            <div class="profile-info-value">${genderText}</div>
-          </div>
-          
-          ${profile.blood_type ? `
-            <div class="profile-info-card">
-              <div class="profile-info-label">🩸 กรุ๊ปเลือด</div>
-              <div class="profile-info-value">${escapeHtml(profile.blood_type)}</div>
-            </div>
-          ` : ''}
-          
-          ${profile.birth_weight ? `
-            <div class="profile-info-card">
-              <div class="profile-info-label">⚖️ น้ำหนักแรกเกิด</div>
-              <div class="profile-info-value">${profile.birth_weight} กก.</div>
-            </div>
-          ` : ''}
-          
-          ${profile.birth_height ? `
-            <div class="profile-info-card">
-              <div class="profile-info-label">📏 ส่วนสูงแรกเกิด</div>
-              <div class="profile-info-value">${profile.birth_height} ซม.</div>
-            </div>
-          ` : ''}
-          
-          ${profile.notes ? `
-            <div class="profile-info-card" style="grid-column: 1 / -1;">
-              <div class="profile-info-label">📝 หมายเหตุ</div>
-              <div class="profile-info-value" style="font-weight: 400; line-height: 1.6;">${escapeHtml(profile.notes)}</div>
-            </div>
-          ` : ''}
-        </div>
-      `;
     }
 
     function selectCategory(category) {
@@ -2572,7 +2257,7 @@
         container.innerHTML = `
           <div class="empty-state">
             <div class="empty-state-icon">💉</div>
-            <p>ยังไม่มีข้อมูล��ัคซีน</p>
+            <p>ยังไม่มีข้อมูลวัคซีน</p>
           </div>
         `;
         return;
@@ -2796,7 +2481,7 @@
     function getNutritionEmoji(category) {
       const emojis = {
         milk: '🍼',
-        food: '🍽���',
+        food: '🍽️',
         supplement: '💊'
       };
       return emojis[category] || '🍎';
@@ -2874,5 +2559,5 @@
 
     initializeApp();
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a8978d7b5c3fd22',t:'MTc2NDgzMjEwMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a89a987c3a2894f',t:'MTc2NDgzNDA5NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
